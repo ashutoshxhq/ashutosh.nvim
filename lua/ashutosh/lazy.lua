@@ -25,16 +25,6 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function()
-            local configs = require("nvim-treesitter.configs")
-
-            configs.setup({
-                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "html", "typescript", "rust", "python", "go" },
-                sync_install = false,
-                highlight = { enable = true },
-                indent = { enable = true },
-            })
-        end
     },
     { "mbbill/undotree" },
     { "tpope/vim-fugitive" },
@@ -54,25 +44,12 @@ local plugins = {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
-    {
-        'goolord/alpha-nvim',
-        config = function()
-            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
-        end
-    },
+    'goolord/alpha-nvim',
     "mg979/vim-visual-multi",
-    {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-    },
+    "nvim-telescope/telescope-file-browser.nvim",
     "xiyaowong/transparent.nvim",
     "lewis6991/gitsigns.nvim",
-    {
-        "aznhe21/actions-preview.nvim",
-        config = function()
-            vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
-        end,
-    },
+    "aznhe21/actions-preview.nvim",
 }
 
 require("lazy").setup(plugins)
