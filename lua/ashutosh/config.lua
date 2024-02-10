@@ -4,6 +4,7 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 local fb_actions = require "telescope._extensions.file_browser.actions"
 
+
 require("telescope").setup {
     pickers = {
         find_files = {

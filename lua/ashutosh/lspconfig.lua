@@ -41,9 +41,12 @@ require('lspconfig').tsserver.setup({
 
 local cmp = require('cmp')
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
+        { name = 'luasnip' }
     },
     mapping = {
         ['<return>'] = cmp.mapping.confirm({ select = false }),
