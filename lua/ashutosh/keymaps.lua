@@ -10,12 +10,11 @@ vim.keymap.set('n', '<leader>fp', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git); 
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
 
 vim.api.nvim_set_keymap(
-  "n",
-  "<space><space>",
-      ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-  { noremap = true }
+    "n",
+    "<space><space>",
+    ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+    { noremap = true }
 )
-
